@@ -7,7 +7,7 @@ import joblib
 def load_model():
     return joblib.load("endplate_model.pkl")
 
-# model = load_model()
+model = load_model()
 
 # Streamlit UI
 st.title("🚧 Endplate Design Criteria Predictor")
@@ -35,4 +35,5 @@ st.write("Upload an Excel file with new endplate design data to predict if desig
     #st.subheader("🔮 Predictions")
 
     #st.dataframe(new_data)
+
 

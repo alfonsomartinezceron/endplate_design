@@ -20,7 +20,7 @@ if uploaded_file:
     # Read Excel
     new_data = pd.read_excel(uploaded_file)
 
-    new_data= pd.read_excel('new_input_HPC_RIS_DN150.xlsx')
+    # new_data= pd.read_excel('new_input_HPC_RIS_DN150.xlsx')
     new_data = new_data.drop(columns =['symmetry','item'])
     new_data['collapse'] = new_data['collapse'].replace({1: 'yes', 0: 'no'})
     
@@ -35,4 +35,5 @@ if uploaded_file:
     new_data["Status"] = ["✅ Acceptable" if p < 1 else "❌ Not Acceptable" for p in preds]
 
     st.subheader("🔮 Predictions")
+
     st.dataframe(new_data)
